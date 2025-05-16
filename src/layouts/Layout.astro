@@ -4,25 +4,57 @@ import InitAnimation from "../components/InitAnimation.astro";
 import KommoChat from "../components/KommoChat.astro";
 import Navigation from "../components/Navigation.astro";
 import "../styles/global.css";
+
+const { title = "Inicio | Intelliship" } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Intelliship</title>
-  </head>
-  <body class="font-manrope">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-	<!-- <InitAnimation />                                        -->
-	<Navigation />
-    <main >
+    <title>{title}</title>
+    <meta name="description" content="Intelliship optimiza tus envíos internacionales con tecnología inteligente. Calcula precios, compara tarifas y gestiona tu logística sin complicaciones." />
+    <meta name="keywords" content="envíos internacionales, logística, transporte, precios por libra, importación desde China, Intelliship, Intelliship hn, " />
+    <meta name="author" content="Fallxn Studio" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://intellishiphn.com/" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://intellishiphn.com/" />
+    <meta property="og:title" content="Intelliship | Envíos internacionales con tecnología inteligente" />
+    <meta property="og:description" content="Calcula, gestiona y optimiza tus envíos desde Miami y China con Intelliship." />
+    <meta property="og:image" content="https://intelliship.com/og-image.jpg" />
+
+    <!-- Twitter Meta -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://intellishiphn.com/" />
+    <meta name="twitter:title" content="Intelliship | Envíos internacionales con tecnología inteligente" />
+    <meta name="twitter:description" content="Calcula, gestiona y optimiza tus envíos desde Miami y China con Intelliship." />
+    <meta name="twitter:image" content="https://intelliship.com/og-image.jpg" />
+
+    <!-- Robots -->
+    <meta name="robots" content="index, follow" />
+  </head>
+
+  <body class="font-manrope">
+    <InitAnimation />
+    <Navigation />
+
+    <main id="main-content">
       <slot />
       <KommoChat />
     </main>
+
     <Footer />
   </body>
 </html>
@@ -35,6 +67,7 @@ import "../styles/global.css";
     height: 100%;
   }
 </style>
+
 <script>
   import "../assets/scripts/lenis-scroll.js";
 </script>
