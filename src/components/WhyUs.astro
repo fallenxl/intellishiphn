@@ -11,35 +11,35 @@ const cardsInfo = [
     title: "Fácil",
     description:
       "Compra en tus tiendas favoritas y nosotros nos encargamos del resto.",
-      icon: Click,
+    icon: Click,
   },
   {
     title: "Rápido",
     description: "Te entregamos tus productos en el menor tiempo posible.",
-      icon: FastTruck,
+    icon: FastTruck,
   },
   {
     title: "Seguro",
     description:
       "Tus paquetes siempre estarán asegurados, te guiamos en el proceso.",
-      icon: Safe,
+    icon: Safe,
   },
   {
     title: "Económico",
     description: "Al mejor precio del mercado, sin sorpresas.",
-      icon: SaveMoney,
+    icon: SaveMoney,
   },
 ];
 ---
 
 <section class="why-us">
   <div
-    class="flex flex-col md:flex-row items-start justify-start md:justify-center max-w-screen-xl mx-auto pl-8 pr-6 gap-10 md:gap-20 py-32"
+    class="flex flex-col md:flex-row items-start justify-start md:justify-center max-w-screen-xl mx-auto pl-8 pr-6 gap-10 md:gap-20 py-28"
   >
     <div
       class="flex flex-col items-center md:items-start justify-center w-full pb-10"
     >
-      <Badge title="¿Por qué elegirnos?" class="fade-up" />
+      <Badge title="¿Por qué elegirnos?" />
       <h3
         class="text-5xl md:text-7xl font-bold text-neutral-600 mt-6 md:text-center flex items-center gap-2 fade-up"
       >
@@ -83,30 +83,32 @@ const cardsInfo = [
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   gsap.registerPlugin(ScrollTrigger);
   const infoContainerRef = document.querySelector(".why-us") as HTMLElement;
-
+  const fadeUpElements = gsap.utils.toArray<HTMLElement>(".fade-up");
   const tl = gsap.timeline({});
 
-  tl.fromTo(
-    ".fade-up",
-    {
-      opacity: 0,
-      y: 50,
-    },
-    {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      stagger: 0.2,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: infoContainerRef,
-        start: "top bottom+=300",
-        end: "bottom top",
-        scrub: true,
-        once: true,
+  fadeUpElements.forEach((element) => {
+    tl.fromTo(
+      element,
+      {
+        opacity: 0,
+        y: 50,
       },
-    }
-  );
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        stagger: 0.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: infoContainerRef,
+          start: "top top+=400",
+          end: "bottom top",
+          scrub: true,
+          once: true,
+        },
+      }
+    );
+  });
 
   ScrollTrigger.refresh();
 </script>

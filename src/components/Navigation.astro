@@ -14,11 +14,13 @@ const { text = "dark" } = Astro.props;
   <nav
     class={`nav-container py-5 px-4 md:px-8 max-w-screen-xl ${text === "dark" ? "text-white" : "text-neutral-700"} mx-auto flex justify-between items-center rounded-xl transition duration-500`}
   >
-    <div class="w-full max-w-screen-xl mx-auto flex justify-between items-center ">
+    <div
+      class="w-full max-w-screen-xl mx-auto flex justify-between items-center"
+    >
       <div class="flex items-center gap-6">
         <a href="/" class="flex items-center gap-2">
           <Logo size={30} color="#46d9e3" />
-          <h1 class="text-xl md:text-3xl font-bold  nav-logo">Intelliship</h1>
+          <h1 class="text-xl md:text-3xl font-bold nav-logo">Intelliship</h1>
         </a>
         <ul class="hidden md:flex items-center gap-5">
           {
@@ -35,11 +37,7 @@ const { text = "dark" } = Astro.props;
       <div>
         <ul class="hidden md:flex items-center gap-5">
           <li class="hidden md:flex items-center gap-5">
-            <a
-              href="#contact"
-            >
-              Iniciar sesión
-            </a>
+            <a href="#contact"> Iniciar sesión </a>
           </li>
           <li class="hidden md:flex items-center gap-5">
             <a
@@ -70,33 +68,26 @@ const { text = "dark" } = Astro.props;
   const navContainer = document.querySelector(".nav-container");
   const links = document.querySelectorAll(".link a");
 
-  gsap.to(
-    navContainer,
-    {
-      backgroundColor: "white",
-      duration: 0.5,
-      color: "#444444",
-      boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
-      scrollTrigger: {
-        trigger: navContainer,
-        start: "top top",
-        end: "bottom top",
-        scrub: true,
-      },
-    }
-  );
-  gsap.to(
-    links,
-    {
-      color: "#444444",
-      duration: 0.5,
-      scrollTrigger: {
-        trigger: navContainer,
-        start: "top top",
-        end: "bottom top",
-        scrub: true,
-      },
-    }
-  );
-
+  gsap.to(navContainer, {
+    backgroundColor: "white",
+    color: "#444444",
+    boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+    duration: 0.2,
+    scrollTrigger: {
+      trigger: navContainer,
+      start: "top top", // activarse al hacer un poco de scroll
+      toggleActions: "play none none reverse", // cuando entra y sale del punto
+      // "play" al entrar, "reverse" al salir
+    },
+  });
+  gsap.to(links, {
+    color: "#444444",
+    duration: 0.2,
+    scrollTrigger: {
+      trigger: navContainer,
+      start: "top top",
+      end: "bottom top",
+      toggleActions: "play none none reverse",
+    },
+  });
 </script>
