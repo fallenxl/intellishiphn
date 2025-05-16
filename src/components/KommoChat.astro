@@ -9,20 +9,19 @@
   };
 
   if ('requestIdleCallback' in window) {
-    requestIdleCallback(() => {
+    setTimeout(() => {
       const script = document.createElement("script");
       script.src = "https://gso.kommo.com/js/button.js";
       script.async = true;
       document.head.appendChild(script);
-    });
+    }, 5000);
   } else {
-    // fallback
-    window.addEventListener("load", () => {
+    setTimeout(() => {
       const script = document.createElement("script");
       script.src = "https://gso.kommo.com/js/button.js";
       script.async = true;
       document.head.appendChild(script);
-    });
+    }, 5000);
   }
 </script>
 
