@@ -1,0 +1,157 @@
+---
+import Badge from "./ui/Badge.astro";
+
+const plansInfo = [
+    {
+      title: "Aéreo Standard",
+      description: "Ideal para envíos regulares.",
+      price: 4.85,
+      features: [
+        "Entregas en 9-12 días",
+        "Salida miércoles y viernes",
+        "Consolidación gratis",
+      ],
+      securePrice: 0.8,
+    },
+    {
+      title: "Aéreo Express",
+      description: "Para envíos urgentes.",
+      price: 9.99,
+      features: [
+        "Entregas en 3-6 días",
+        "Salida los sábados",
+        "Consolidación gratis",
+      ],
+      securePrice: 0.8,
+    },
+    {
+      title: "Marítimo",
+      description: "Ideal para envíos grandes.",
+      price: 2.5,
+      features: [
+        "Entregas en 20-25 días",
+        "Salida los lunes",
+        "Consolidación gratis",
+      ],
+      securePrice: 0.8,
+    },
+  ];
+---
+<section id="prices">
+      <div class="plans-container flex flex-col  bg-neutral-50 border-y border-neutral-200  items-start justify-start  mx-auto  py-32  md:px-0 ">
+        <div class="plans-header flex flex-col items-center justify-center w-full pb-10 px-8 md:px-0 max-w-screen-xl mx-auto">
+          <Badge title="Precios" />
+          <h3 class=" text-3xl md:text-5xl font-bold text-neutral-600 mt-6 text-center ">
+            Los mejores precios a tu alcance.
+          </h3>
+          <p class="mt-6 text-lg  text-neutral-500 md:max-w-[50ch] md:text-balance text-center">
+            Contrata el que más se adapte a tus necesidades y disfruta de un
+            servicio rápido y seguro.
+          </p>
+        </div>
+        <div class="w-full max-w-screen-xl mx-auto flex flex-col md:flex-row justify-center pt-10 md:pt-24 gap-16 px-8 md:px-10">
+          {plansInfo.map((plan, index) => (
+            <div
+
+              class="plan-card bg-white shadow-sm py-10 px-10 flex flex-col w-full md:even:scale-110 z-10 "
+            >
+              <p class="text-5xl font-bold text-neutral-600 ">
+                ${plan.price.toFixed(2)}
+                <span class="text-sm font-normal text-neutral-500">
+                  {" "}
+                  / libra
+                </span>
+              </p>
+              <p class="text-sm text-neutral-400 font-light mt-2 ">
+                + Seguro ${plan.securePrice.toFixed(2)} por carga retirada.
+              </p>
+              <h3 class="text-xl font-medium py-1 mt-6 text-neutral-700 ">
+                {plan.title}
+              </h3>
+              <p class="text-sm text-neutral-500">{plan.description}</p>
+              <hr class="my-6  border-neutral-300" />
+              <ul class="mt-4 space-y-2">
+                {plan.features.map((feature, index) => (
+                  <li  class=" text-neutral-600">
+                    {/* <CiCircleCheck
+                      class="inline-block text-[#01bac0]  mr-2"
+                      size={20}
+                    /> */}
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+
+              <a
+                href="https://sacalogistics.managercargo.com/public/web/webindex/registrocas/form/1?ag=1"
+                target="_blank"
+                class="flex hover:scale-95 transition duration-300 bg-[#44ccd6] text-white items-center justify-center   px-4  p-2 mt-10 cursor-pointer z-20 rounded-full"
+              >
+                <span class="">Registrar mi casillero</span>
+                {/* <GoArrowRight class="ml-2" size={20} color="white" /> */}
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <script>
+        import { gsap } from "gsap";
+        import { ScrollTrigger } from "gsap/ScrollTrigger";
+        gsap.registerPlugin(ScrollTrigger);
+        const plansCards = gsap.utils.toArray<HTMLDivElement>(".plan-card");
+    const plansContainer = document.querySelector(
+      ".plans-container"
+    ) as HTMLDivElement;
+    const plansHeader = document.querySelector(
+      ".plans-header"
+    ) as HTMLDivElement;
+
+    const tl = gsap.timeline({});
+    tl.fromTo(
+      plansHeader,
+      {
+        opacity: 0,
+        y: 100,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: plansContainer,
+          start: "top top+=800",
+          end: "bottom top",
+          scrub: true,
+          once: true,
+        },
+      }
+    );
+
+    tl.fromTo(
+      plansCards,
+      {
+        opacity: 0,
+        y: 150,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        stagger: 0.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: plansContainer,
+          start: "top top+=800",
+          end: "bottom top",
+          scrub: true,
+          once: true,
+        },
+      }
+    );
+
+  
+      ScrollTrigger.refresh();
+    </script>

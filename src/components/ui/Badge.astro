@@ -1,0 +1,31 @@
+---
+const { title, class:className } = Astro.props;
+---
+<div
+  class={`bg-[#01bac0] text-white p-2 px-4 rounded-full border border-neutral-200 badge-fade ${className}`}
+>
+  <span class="font-bold">{title}</span>
+</div>
+
+<script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    gsap.registerPlugin(ScrollTrigger);
+    const badges = gsap.utils.toArray<HTMLDivElement>(".badge-fade");
+    const tl = gsap.timeline({});
+   badges.forEach((badge, index) => {
+      tl.from(badge, {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: badge,
+          start: "top bottom",
+          end: "top top",
+          scrub: true,
+          once: true,
+        },
+      });
+    });
+</script>

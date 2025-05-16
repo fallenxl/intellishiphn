@@ -1,0 +1,71 @@
+<section class="statistics md:px-10">
+  <div
+    class="px-10 py-10 bg-[#44ccd6] md:rounded-2xl shadow-lg max-w-screen-xl mx-auto"
+  >
+    <div
+      class="flex flex-col items-center md:flex-row md:items-start justify-around gap-20 md:gap-10 py-5"
+    >
+      <div class="flex flex-col justify-center items-center gap-2 text-white">
+        <!-- <FaBox class="text-7xl" /> -->
+        <div
+          class="font-bold text-7xl flex items-center justify-center gap-2 border-b pb-2 border-white"
+        >
+          <h3>+500k</h3>
+        </div>
+        <p class="text-center">Paquetes Entregados</p>
+      </div>
+      <div class="flex flex-col items-center gap-2 text-white">
+        <!-- <PiUsersThree class="text-7xl" /> -->
+        <div
+          class="font-bold text-7xl flex items-center justify-center gap-2 border-b pb-2 border-white"
+        >
+          <h3>+8.5k</h3>
+        </div>
+        <p class="text-center">Clientes activos</p>
+      </div>
+      <div class="flex flex-col items-center gap-2 text-white">
+        <!-- <TbTruckDelivery class="text-7xl" /> -->
+        <div
+          class="font-bold text-7xl flex items-center justify-center gap-2 border-b pb-2 border-white"
+        >
+          <h3>+4.5k</h3>
+        </div>
+        <p class="text-center">Entregas en camino</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+  const statisticsContainer = document.querySelector(
+    ".statistics"
+  ) as HTMLElement;
+  const tl = gsap.timeline({});
+
+  tl.fromTo(
+    statisticsContainer,
+    {
+      opacity: 0,
+      y: 100,
+    },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      stagger: 0.2,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: statisticsContainer,
+        start: "top top+=700",
+        end: "bottom top",
+        scrub: true,
+        once: true,
+      },
+    }
+  );
+
+  ScrollTrigger.refresh();
+</script>

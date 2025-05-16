@@ -1,0 +1,33 @@
+---
+import { Image } from "astro:assets";
+import map from "../assets/map.webp";
+import Badge from "./ui/Badge.astro";
+---
+<section class="relative z-10 bg-white py-20 ">
+      <div class="flex max-w-screen-xl mx-auto flex-col md:flex-row-reverse items-center justify-center gap-10 px-8 md:px-0">
+        <div class="flex flex-col items-center md:items-end  w-full h-full mx-auto  z-10 text-center md:text-right">
+          <Badge title="Cobertura" />
+          <h2 class="text-3xl md:text-4xl inline-block font-bold text-neutral-700  mb-5 mt-5">
+            Desde EE.UU hasta China.
+          </h2>
+          <p class="text-lg md:text-xl text-neutral-500 mb-10 max-w-[50ch] text-balance">
+            Traemos tus productos favoritos de Estados Unidos y China a
+            Honduras.
+          </p>
+          <p class="text-lg md:text-xl text-neutral-500 mb-10 max-w-[50ch] text-balance">
+            <span class="text-[#44ccd6] font-bold mr-3">
+              ¡Estamos aquí para ayudarte!
+            </span>
+            Con oficinas en Estados Unidos y China para brindarte el mejor
+            servicio.
+          </p>
+        </div>
+        <Image
+          width={600}
+          height={600}
+          src={map}
+          alt="Container"
+          class=" h-full opacity-50 w-full md:w-1/2"
+        />
+      </div>
+    </section>

@@ -1,0 +1,216 @@
+---
+import { Image } from "astro:assets";
+import heroImage from "../assets/hero.webp";
+import Badge from "./ui/Badge.astro";
+const servicesInfo = [
+  {
+    title: "Agrupación gratis",
+    description: "Agrupamos tus productos para que siempre ahorres.",
+    media: heroImage,
+    //   icon: CiBoxes,
+  },
+  {
+    title: "Usa nuestra tarjeta",
+    description:
+      "Usa nuestra tarjeta de crédito para comprar en tus tiendas favoritas.",
+    media: heroImage,
+    //   icon: LiaCreditCardSolid,
+  },
+  {
+    title: "Personal Shopper",
+    description: "Te ayudamos a comprar en tus tiendas favoritas.",
+    media: heroImage,
+    //   icon: FaHandsHelping,
+  },
+  {
+    title: "Entregas rápidas",
+    description: "Contamos con los mejores tiempos de entrega.",
+    media: heroImage,
+    //   icon: TbTruckDelivery,
+  },
+];
+---
+
+<section id="services">
+  <div
+    class="service-container md:flex items-start justify-start max-w-screen-xl mx-auto pt-28 services-container max-h-[80vh] 3xl:max-h-[60vh] hidden"
+  >
+    <div
+      class="service-text flex flex-col items-start justify-start w-full services-text-container"
+    >
+      <Badge title="Nuestros servicios" className="fade-up-service" />
+      <h3
+        class="text-5xl font-bold text-neutral-600 mt-4 max-w-[15ch] fade-up-service"
+      >
+        La mejor opción para tus pedidos.
+      </h3>
+      <p
+        class="mt-6 text-[1.22rem] text-neutral-500 max-w-[50ch] text-balance fade-up-service"
+      >
+        Traemos tus productos favoritos de Estados Unidos y China a Honduras.
+      </p>
+    </div>
+    <ul
+      class="service-media grid grid-cols-2 gap-20 w-full items-start services-media-container"
+    >
+      {
+        servicesInfo.map((service, index) => (
+          <li class="flex flex-col items-start justify-center">
+            <div class="relative">
+              {/* gradient bottom in the video */}
+              <div class="absolute inset-0 bg-gradient-to-b from-transparent to-white opacity-50" />
+              {/* gradient bottom in the video */}
+
+              <Image
+                src={service.media}
+                alt={service.title}
+                loading="lazy"
+                width={300}
+                height={374.6}
+                class="rounded-xl"
+              />
+            </div>
+            <div class="flex items-center gap-2 mt-6">
+              {/* <service.icon class="text-2xl text-[#05c2c9] " /> */}
+              <h4 class="text-lg font-bold text-neutral-600 ">
+                {service.title}
+              </h4>
+            </div>
+            <p class="mt-2  text-neutral-500">{service.description}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+  {/* movil version */}
+  <div
+    class="flex flex-col items-start justify-start max-w-screen-xl mx-auto pt-10 pb-24 md:hidden px-8 overflow-hidden"
+  >
+    <div
+      class="flex flex-col items-center md:items-start justify-center w-full pb-10"
+    >
+      <Badge title="Nuestros servicios" class="fade-up-service" />
+
+      <h3
+        class="text-4xl font-bold text-neutral-600 mt-4 max-w-[15ch] fade-up-service-m text-center"
+      >
+        La Mejor Opción Para tus Pedidos.
+      </h3>
+      <p
+        class="mt-6 text-xl md:text-2xl text-neutral-500 max-w-[30ch] fade-up-service-m text-center"
+      >
+        Traemos tus productos favoritos de Estados Unidos y China a Honduras.
+      </p>
+    </div>
+    <ul class="flex flex-col items-center justify-center gap-20 w-full">
+      {
+        servicesInfo.map((service, index) => (
+          <li class="flex flex-col items-center justify-center  service-card">
+            <div class="relative">
+              {/* gradient bottom in the video */}
+              <div class="absolute inset-0 bg-gradient-to-b from-transparent to-white opacity-50" />
+              <Image
+                src={service.media}
+                alt={service.title}
+                loading="lazy"
+                width={300}
+                height={374.6}
+                class="rounded-xl"
+              />
+            </div>
+            <div class="mt-6">
+              <div class="flex items-center gap-2">
+                {/* {service.icon && (
+                    <service.icon class="text-4xl text-[#05c2c9]" />
+                  )} */}
+                <h4 class="text-xl font-bold text-neutral-700 font-arial max-w-[30ch] ">
+                  {service.title}
+                </h4>
+              </div>
+              <p class="mt-2  text-neutral-500 max-w-[30ch] ">
+                {service.description}
+              </p>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+  const servicesContainer = document.querySelector(
+    ".service-container"
+  ) as HTMLElement;
+  const servicesTextContainer = document.querySelector(
+    ".services-text-container"
+  ) as HTMLElement;
+  const servicesMediaContainer = document.querySelector(
+    ".services-media-container"
+  ) as HTMLElement;
+
+  const mediaHeight = servicesMediaContainer.scrollHeight;
+  const textHeight = servicesTextContainer.offsetHeight;
+
+  const tl = gsap.timeline({});
+
+  tl.to(servicesTextContainer, {
+    scrollTrigger: {
+      trigger: servicesContainer,
+      start: "top top",
+      scrub: true,
+      end: `+=${mediaHeight - textHeight}`,
+      pin: true,
+    },
+  }).to(servicesMediaContainer, {
+    y: -(mediaHeight - textHeight),
+    ease: "none",
+    scrollTrigger: {
+      trigger: servicesContainer,
+      start: "top top",
+      end: `+=${mediaHeight - textHeight}`,
+      scrub: true,
+    },
+  });
+
+  const fadeUpServices = gsap.utils.toArray(
+    ".fade-up-service"
+  ) as HTMLDivElement[];
+  fadeUpServices.forEach((service, index) => {
+    tl.from(service, {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      stagger: 0.2,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: service,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true,
+        once: true,
+      },
+    });
+  });
+  const cardsService = gsap.utils.toArray(".service-card") as HTMLLIElement[];
+  cardsService.forEach((card, index) => {
+    tl.from(card, {
+      opacity: 0,
+      x: index % 2 === 0 ? -100 : 100,
+      y: 50,
+      duration: 1,
+      stagger: 0.2,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: card,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true,
+        once: true,
+      },
+    });
+  });
+</script>

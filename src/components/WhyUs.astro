@@ -1,0 +1,108 @@
+---
+import Logo from "../icons/Logo.astro";
+import Badge from "./ui/Badge.astro";
+
+const cardsInfo = [
+  {
+    title: "Fácil",
+    description:
+      "Compra en tus tiendas favoritas y nosotros nos encargamos del resto.",
+    //   icon: TbHandClick,
+  },
+  {
+    title: "Rápido",
+    description: "Te entregamos tus productos en el menor tiempo posible.",
+    //   icon: TbTruckDelivery,
+  },
+  {
+    title: "Seguro",
+    description:
+      "Tus paquetes siempre estarán asegurados, te guiamos en el proceso.",
+    //   icon: BsBoxSeam,
+  },
+  {
+    title: "Económico",
+    description: "Al mejor precio del mercado, sin sorpresas.",
+    //   icon: MdOutlineSavings,
+  },
+];
+---
+
+<section class="why-us">
+  <div
+    class="flex flex-col md:flex-row items-start justify-start md:justify-center max-w-screen-xl mx-auto pl-8 pr-6 gap-10 md:gap-20 py-32"
+  >
+    <div
+      class="flex flex-col items-center md:items-start justify-center w-full pb-10"
+    >
+      <Badge title="¿Por qué elegirnos?" class="fade-up" />
+      <h3
+        class="text-5xl md:text-7xl font-bold text-neutral-600 mt-6 md:text-center flex items-center gap-2 fade-up"
+      >
+        <Logo color="#01bac0" size={40} />
+        Intelliship
+      </h3>
+      <p
+        class="mt-8 text-lg text-neutral-600 md:max-w-[50ch] fade-up text-center md:text-left"
+      >
+        En Intelliship somos expertos en importación de paquetería, brindando
+        asesoría personalizada y soluciones a la medida de cada cliente.
+      </p>
+    </div>
+    <div>
+      <ul>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 w-full items-start services-media-container"
+        >
+          {
+            cardsInfo.map((card, index) => (
+              <li class="flex flex-col items-start justify-center fade-up">
+                <div class="relative" />
+                <div class="flex items-center justify-center gap-2 mt-6">
+                  {/* <card.icon class="text-3xl  text-[#05c2c9] " /> */}
+                  <h4 class="text-lg font-bold text-neutral-700  t">
+                    {card.title}
+                  </h4>
+                </div>
+                <p class="mt-2  text-neutral-500 ">{card.description}</p>
+              </li>
+            ))
+          }
+        </div>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+  const infoContainerRef = document.querySelector(".why-us") as HTMLElement;
+
+  const tl = gsap.timeline({});
+
+  tl.fromTo(
+    ".fade-up",
+    {
+      opacity: 0,
+      y: 50,
+    },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      stagger: 0.2,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: infoContainerRef,
+        start: "top bottom+=300",
+        end: "bottom top",
+        scrub: true,
+        once: true,
+      },
+    }
+  );
+
+  ScrollTrigger.refresh();
+</script>

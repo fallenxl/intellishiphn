@@ -1,0 +1,16 @@
+---
+import Logo from "../icons/Logo.astro";
+let logoColor = "#00ccd3";
+---
+
+<div
+  class="animation-container fixed top-0 left-0 w-full h-full flex justify-center items-center z-[99999999] bg-white"
+>
+  <Logo color={logoColor} size={80} animation={true} />
+  <div class="bg-transition fixed scale-y-0 origin-top w-screen h-screen -z-10">
+  </div>
+</div>
+<script>
+  import {playAnimation} from "../assets/scripts/animation.js";
+  playAnimation();
+</script>

@@ -1,0 +1,34 @@
+<script type="text/javascript">
+  window.crm_plugin = {
+    id: "1041349",
+    hash: "259ae3e11e72e09b11caf1c00ab04443582b3d30e99281721492e39aa0d03f6a",
+    locale: "es",
+    setMeta: function (p) {
+      this.params = (this.params || []).concat([p]);
+    },
+  };
+
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(() => {
+      const script = document.createElement("script");
+      script.src = "https://gso.kommo.com/js/button.js";
+      script.async = true;
+      document.head.appendChild(script);
+    });
+  } else {
+    // fallback
+    window.addEventListener("load", () => {
+      const script = document.createElement("script");
+      script.src = "https://gso.kommo.com/js/button.js";
+      script.async = true;
+      document.head.appendChild(script);
+    });
+  }
+</script>
+
+<style is:global>
+    .amo-button-holder{
+        bottom: 2em !important;
+        right: 2em !important;
+    }
+</style>
