@@ -93,12 +93,15 @@ const servicesInfo = [
     <div
       class="flex flex-col items-center md:items-start justify-center w-full pb-10"
     >
-      <Badge title="Nuestros servicios" class="fade-up-service" />
-
+      <div
+        class={`bg-[#01bac0] text-white p-2 px-4 rounded-full border border-neutral-200 badge-fade `}
+      >
+        <span class="font-bold">Nuestros servicios</span>
+      </div>
       <h3
         class="text-4xl font-bold text-neutral-600 mt-4 max-w-[15ch] fade-up-service-m text-center"
       >
-        La Mejor Opción Para tus Pedidos.
+        La mejor opción para tus pedidos.
       </h3>
       <p
         class="mt-6 text-xl md:text-2xl text-neutral-500 max-w-[30ch] fade-up-service-m text-center"
@@ -127,6 +130,7 @@ const servicesInfo = [
                 {/* {service.icon && (
                     <service.icon class="text-4xl text-[#05c2c9]" />
                   )} */}
+                <service.icon />
                 <h4 class="text-xl font-bold text-neutral-700 font-arial max-w-[30ch] ">
                   {service.title}
                 </h4>
