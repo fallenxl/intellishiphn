@@ -15,15 +15,15 @@ import "../styles/global.css";
     <meta name="generator" content={Astro.generator} />
     <title>Intelliship</title>
   </head>
-  <body class="font-manrope">
+  <body class="font-manrope bg-neutral-100">
 
-	<InitAnimation />                                       
-	<Navigation />
+	<!-- <InitAnimation /> -->
+	<Navigation text="light"/>
     <main >
       <slot />
       <KommoChat />
     </main>
-    <Footer />
+    <Footer  />
   </body>
 </html>
 

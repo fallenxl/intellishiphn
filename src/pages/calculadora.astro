@@ -1,0 +1,62 @@
+---
+import LayoutCalculator from "../layouts/LayoutCalculator.astro";
+---
+
+<LayoutCalculator>
+  <div
+    class="flex flex-col items-center justify-center  w-full min-h-screen  md:px-6 "
+  >
+    <div
+      class="bg-white/50 rounded-2xl  w-full px-10 py-16 pb-24 mt-20 border border-neutral-200 max-w-screen-xl top-6 relative "
+    >
+      <div class="flex flex-col items-center justify-center gap-5">
+        <h1 class="text-3xl font-bold text-neutral-700">
+          Calculadora de Envíos
+        </h1>
+        <p class="text-neutral-500">
+          Calcula el costo de tu envío de manera rápida y sencilla.
+        </p>
+      </div>
+
+      <div class="mt-10">
+        <form class="flex flex-col items-center gap-5">
+          <input
+            type="text"
+            placeholder="Origen"
+            class="w-full max-w-md p-2 border border-neutral-300 rounded-lg"
+          />
+          <input
+            type="text"
+            placeholder="Destino"
+            class="w-full max-w-md p-2 border border-neutral-300 rounded-lg"
+          />
+          <input
+            type="number"
+            placeholder="Peso (kg)"
+            class="w-full max-w-md p-2 border border-neutral-300 rounded-lg"
+          />
+          <input
+            type="number"
+            placeholder="Valor (USD)"
+            class="w-full max-w-md p-2 border border-neutral-300 rounded-lg"
+          />
+          <button
+            type="submit"
+            class="bg-[#3cb4bd] text-white px-4 py-2 rounded-lg hover:bg-[#46d9e3] transition duration-300"
+          >
+            Calcular
+          </button>
+        </form>
+    </div>
+    <div class="mt-5">
+      <h2 class="text-xl font-bold text-neutral-700">
+        Costo Estimado: $XX.XX
+      </h2>
+      <p class="text-neutral-500">
+        Este es un costo estimado y puede variar según el servicio
+        seleccionado.
+      </p>
+    </div>
+    </div>
+  </div>
+</LayoutCalculator>

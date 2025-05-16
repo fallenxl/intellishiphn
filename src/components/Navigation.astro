@@ -1,23 +1,25 @@
 ---
+import ArrowDown from "../icons/ArrowDown.astro";
 import Logo from "../icons/Logo.astro";
 
 const links = [
   { name: "Servicios", href: "#services" },
   { name: "Precios", href: "#prices" },
-  { name: "Calculadora", href: "#calculator" },
+  { name: "Calculadora", href: "/calculadora" },
 ];
+const { text = "dark" } = Astro.props;
 ---
 
 <header class="fixed top-0 left-0 w-full z-60 p-3">
   <nav
-    class={`nav-container py-5 px-4 md:px-8 max-w-screen-xl text-white mx-auto flex justify-between items-center rounded-xl transition duration-500`}
+    class={`nav-container py-5 px-4 md:px-8 max-w-screen-xl ${text === "dark" ? "text-white" : "text-neutral-700"} mx-auto flex justify-between items-center rounded-xl transition duration-500`}
   >
     <div class="w-full max-w-screen-xl mx-auto flex justify-between items-center ">
       <div class="flex items-center gap-6">
-        <div class="flex items-center gap-2">
+        <a href="/" class="flex items-center gap-2">
           <Logo size={30} color="#46d9e3" />
-          <h1 class="text-3xl font-bold  nav-logo">Intelliship</h1>
-        </div>
+          <h1 class="text-xl md:text-3xl font-bold  nav-logo">Intelliship</h1>
+        </a>
         <ul class="hidden md:flex items-center gap-5">
           {
             links.map((link) => (
@@ -42,9 +44,10 @@ const links = [
           <li class="hidden md:flex items-center gap-5">
             <a
               href="#contact"
-              class="bg-[#3cb4bd] text-white px-4 py-2 rounded-lg transition duration-300 hover:bg-[#46d9e3]/80"
+              class="bg-[#3cb4bd] text-white flex items-center gap-2 px-4 py-2 rounded-lg transition duration-300 hover:bg-[#46d9e3]/80"
             >
               Regístrate
+              <ArrowDown />
             </a>
           </li>
         </ul>
