@@ -2,31 +2,35 @@
 import { Image } from "astro:assets";
 import heroImage from "../assets/hero.webp";
 import Badge from "./ui/Badge.astro";
+import Box from "../icons/Box.astro";
+import Card from "../icons/Card.astro";
+import CustomerService from "../icons/CustomerService.astro";
+import FastTruck from "../icons/FastTruck.astro";
 const servicesInfo = [
   {
     title: "Agrupación gratis",
     description: "Agrupamos tus productos para que siempre ahorres.",
     media: heroImage,
-    //   icon: CiBoxes,
+    icon: Box,
   },
   {
     title: "Usa nuestra tarjeta",
     description:
       "Usa nuestra tarjeta de crédito para comprar en tus tiendas favoritas.",
     media: heroImage,
-    //   icon: LiaCreditCardSolid,
+    icon: Card,
   },
   {
     title: "Personal Shopper",
     description: "Te ayudamos a comprar en tus tiendas favoritas.",
     media: heroImage,
-    //   icon: FaHandsHelping,
+    icon: CustomerService,
   },
   {
     title: "Entregas rápidas",
     description: "Contamos con los mejores tiempos de entrega.",
     media: heroImage,
-    //   icon: TbTruckDelivery,
+    icon: FastTruck,
   },
 ];
 ---
@@ -71,7 +75,7 @@ const servicesInfo = [
               />
             </div>
             <div class="flex items-center gap-2 mt-6">
-              {/* <service.icon class="text-2xl text-[#05c2c9] " /> */}
+              <service.icon class="text-2xl text-[#05c2c9] " />
               <h4 class="text-lg font-bold text-neutral-600 ">
                 {service.title}
               </h4>
