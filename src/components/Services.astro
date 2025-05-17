@@ -45,7 +45,7 @@ const servicesInfo = [
     <div
       class="service-text flex flex-col items-start justify-start w-full services-text-container"
     >
-      <Badge title="Nuestros servicios" className="fade-up-service" />
+      <Badge title="Nuestros servicios" />
       <h3
         class="text-5xl font-bold text-neutral-600 mt-4 max-w-[15ch] fade-up-service"
       >
@@ -191,7 +191,7 @@ const servicesInfo = [
     ".fade-up-service"
   ) as HTMLDivElement[];
   fadeUpServices.forEach((service, index) => {
-    tl.from(service, {
+    gsap.from(service, {
       opacity: 0,
       y: 50,
       duration: 1,
@@ -199,7 +199,7 @@ const servicesInfo = [
       ease: "power3.out",
       scrollTrigger: {
         trigger: service,
-        start: "top bottom",
+        start: "top 80%",
         end: "bottom top",
         scrub: true,
         once: true,
@@ -224,4 +224,25 @@ const servicesInfo = [
       },
     });
   });
+
+  const fadeUpServiceM = gsap.utils.toArray(
+    ".fade-up-service-m"
+  ) as HTMLDivElement[];
+  fadeUpServiceM.forEach((service, index) => {
+    gsap.from(service, {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      stagger: 0.2,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: service,
+        start: "top 80%",
+        end: "bottom top",
+        scrub: true,
+        once: true,
+      },
+    });
+  });
+  ScrollTrigger.refresh();
 </script>
