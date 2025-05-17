@@ -4,6 +4,7 @@ import InitAnimation from "../components/InitAnimation.astro";
 import KommoChat from "../components/KommoChat.astro";
 import Navigation from "../components/Navigation.astro";
 import "../styles/global.css";
+const { title } = Astro.props;
 ---
 
 <!doctype html>
@@ -13,19 +14,17 @@ import "../styles/global.css";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Cotizador | Intelliship</title>
+    <title>{title} | Intelliship</title>
   </head>
   <body class="font-manrope bg-neutral-100 flex flex-col">
-
-	<InitAnimation />
-	<Navigation text="light"/>
-    <main >
+    <InitAnimation />
+    <Navigation text="light" />
+    <main>
       <slot />
       <KommoChat />
     </main>
-    <div class="flex-grow" />
-      <Footer  />
-    </div>
+    <div class="flex-grow"></div>
+    <Footer />
   </body>
 </html>
 

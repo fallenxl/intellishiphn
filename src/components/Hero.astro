@@ -3,22 +3,23 @@ import { Image } from "astro:assets";
 import heroImage from "../assets/hero.webp";
 import Mouse from "../icons/Mouse.astro";
 import ArrowDown from "../icons/ArrowDown.astro";
-
+import heroVideo from "../assets/hero-video.mp4";
 ---
+
 <div
   class="relative h-[100dvh] w-full overflow-hidden flex flex-col justify-center items-center bg-white"
 >
   <!-- Texto -->
   <div class="flex items-start justify-between">
     <div
-      class="relative z-20 text-neutral-900 text-[2.6em] md:text-[4.5em]  3xl:text-[8em] leading-[1em] flex flex-col justify-center h-screen"
+      class="relative z-20 text-neutral-900 text-[2.6em] md:text-[4.5em] 3xl:text-[8em] leading-[1em] flex flex-col justify-center h-screen"
     >
       <div class="hero-texts-container font-semibold text-white text-center">
         <p class="hero-text-split flex items-center justify-center gap-4">
           Pedidos seguros,
         </p>
         <p class="hero-text-split text-white">
-          al <span class="text-[#44ccd6]">instante.</span>
+          al <span class="text-[#44ccd6] levitating">instante.</span>
         </p>
       </div>
 
@@ -27,14 +28,14 @@ import ArrowDown from "../icons/ArrowDown.astro";
           class="hero-text-split text-white text-base md:text-lg font-light mt-4 text-center px-8"
         >
           La mejor manera de importar productos a Honduras.
-      </p>
+        </p>
         <a
           href="https://sacalogistics.managercargo.com/public/web/webindex/registrocas/form/1?ag=1"
           target="_blank"
           class="flex gap-2 hover:scale-105 transition duration-500 bg-[#01bac0] rounded-full shadow-sm items-center justify-center text-white text-base md:text-lg px-6 p-2 mt-6 cursor-pointer z-20 hero-button"
         >
           <span class="font-medium">Obtener mi casillero</span>
-          <ArrowDown/>
+          <ArrowDown />
         </a>
       </div>
     </div>
@@ -42,14 +43,24 @@ import ArrowDown from "../icons/ArrowDown.astro";
 
   <!-- Imagen de fondo -->
   <div class="absolute inset-0 z-10 overflow-hidden">
-    <Image
+    <!-- <Image
       src={heroImage}
       alt="Background"
       width="1920"
       height="1080"
       class="absolute top-0 left-0 w-screen h-screen object-cover opacity-80"
       loading="lazy"
-    />
+    /> -->
+    <video
+      autoplay
+      loop
+      muted
+      playsinline
+      class="absolute top-0 left-0 w-screen h-screen object-cover opacity-80"
+    >
+      <source src={heroVideo} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
     <div class="absolute inset-0 bg-black/55"></div>
   </div>
 
@@ -65,4 +76,17 @@ import ArrowDown from "../icons/ArrowDown.astro";
   </div>
 </div>
 
+<script>
+  import { gsap } from "gsap";
 
+  const leavingText = document.querySelectorAll(".levitating");
+  const tl = gsap.timeline({
+    repeat: -1,
+    yoyo: true,
+  });
+  tl.to(leavingText, {
+    y: -10,
+    duration: 0.5,
+    ease: "power1.inOut",
+  });
+</script>
