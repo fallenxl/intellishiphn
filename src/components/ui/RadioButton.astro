@@ -1,0 +1,45 @@
+---
+interface RadioButtonProps {
+  name: string;
+  options: Array<{ label: string; value: string }>;
+  class?: string;
+  defaultValue?: string; // ✅ NUEVO
+}
+
+const {
+  name,
+  options,
+  class: className,
+  defaultValue,
+} = Astro.props as RadioButtonProps;
+---
+
+{
+  options.map((option) => (
+    <div class="radio-button-container relative">
+      <input
+        type="radio"
+        name={name}
+        value={option.value}
+        id={option.value}
+        class="radio-input absolute opacity-0 cursor-pointer z-10"
+        checked={defaultValue === option.value} 
+      />
+      <label
+        for={option.value}
+        class={`radio-label font-bold text-neutral-700 w-full h-full text-center
+        border-2 border-neutral-200 rounded-xl cursor-pointer flex items-center justify-center transition-colors ${className}`}
+      >
+        {option.label}
+      </label>
+    </div>
+  ))
+}
+
+<style>
+  .radio-input:checked + .radio-label {
+    background-color: #44ccd6;
+    color: white;
+    border-color: #44ccd6;
+  }
+</style>

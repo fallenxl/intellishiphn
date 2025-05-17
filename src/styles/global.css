@@ -3,4 +3,5 @@
 @theme{
     --breakpoint-3xl: 140rem;
     --font-manrope: 'Manrope', sans-serif;
+     --color-principal: #44ccd6;
 }

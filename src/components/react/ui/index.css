@@ -1,0 +1,5 @@
+.radio-input:checked + .radio-label {
+  background-color: #44ccd6;
+  color: white;
+  border-color: #44ccd6;
+}
