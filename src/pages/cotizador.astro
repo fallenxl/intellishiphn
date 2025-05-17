@@ -87,15 +87,15 @@ import WhyUs2 from "../components/WhyUs2.astro";
     const forklift = document.getElementById("forklift");
     if (!forklift) return;
 
-    gsap.to(forklift, {
+    gsap.to(forklift, { // duración de la animación
       scrollTrigger: {
         trigger: forklift,
         start: "top 70%", // cuando el forklift entra al 80% del viewport
         end: "top 20%", // cuando llega al 20% del viewport
-        scrub: 1, // suavidad de la animación con el scroll
+        scrub: true, // suavidad de la animación con el scroll
         // markers: true, // útil para debug
       },
-      x: 340, // cuánto se moverá en eje X
+      x: 450, // cuánto se moverá en eje X
       ease: "power2.out",
     });
   });

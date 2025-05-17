@@ -5,3 +5,7 @@
     --font-manrope: 'Manrope', sans-serif;
      --color-principal: #44ccd6;
 }
+
+html {
+    scroll-behavior: smooth;
+}

@@ -1,6 +1,9 @@
 ---
 import { Image } from "astro:assets";
-import heroImage from "../assets/hero.webp";
+import service1 from "../assets/service1.webp";
+import service2 from "../assets/service2.webp";
+import service3 from "../assets/service3.webp";
+import service4 from "../assets/service4.webp";
 import Badge from "./ui/Badge.astro";
 import Box from "../icons/Box.astro";
 import Card from "../icons/Card.astro";
@@ -10,26 +13,26 @@ const servicesInfo = [
   {
     title: "Agrupación gratis",
     description: "Agrupamos tus productos para que siempre ahorres.",
-    media: heroImage,
+    media: service1,
     icon: Box,
   },
   {
     title: "Usa nuestra tarjeta",
     description:
       "Usa nuestra tarjeta de crédito para comprar en tus tiendas favoritas.",
-    media: heroImage,
+    media: service2,
     icon: Card,
   },
   {
     title: "Personal Shopper",
     description: "Te ayudamos a comprar en tus tiendas favoritas.",
-    media: heroImage,
+    media: service3,
     icon: CustomerService,
   },
   {
     title: "Entregas rápidas",
     description: "Contamos con los mejores tiempos de entrega.",
-    media: heroImage,
+    media: service4,
     icon: FastTruck,
   },
 ];

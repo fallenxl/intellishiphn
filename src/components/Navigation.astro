@@ -1,6 +1,9 @@
 ---
 import ArrowDown from "../icons/ArrowDown.astro";
+import Facebook from "../icons/Facebook.astro";
+import Instagram from "../icons/Instagram.astro";
 import Logo from "../icons/Logo.astro";
+import Whatsapp from "../icons/Whatsapp.astro";
 
 const links = [
   { name: "Servicios", href: "/#services" },
@@ -37,7 +40,12 @@ const { text = "dark" } = Astro.props;
       <div>
         <ul class="hidden md:flex items-center gap-5">
           <li class="hidden md:flex items-center gap-5">
-            <a href="https://sacalogistics.managercargo.com/public/indexlogin/logincasillero" target="_blank"> Iniciar sesión </a>
+            <a
+              href="https://sacalogistics.managercargo.com/public/indexlogin/logincasillero"
+              target="_blank"
+            >
+              Iniciar sesión
+            </a>
           </li>
           <li class="hidden md:flex items-center gap-5">
             <a
@@ -54,11 +62,111 @@ const { text = "dark" } = Astro.props;
     </div>
 
     <div class="link flex md:hidden">
-      <button class="text-2xl transition duration-300">
-        <i class="fas fa-bars"></i>
+      <button class="text-2xl transition duration-300 mov-menu-open">
+        <svg
+          width="30"
+          height="30"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+            <g id="Menu / Menu_Alt_05">
+              <path
+                id="Vector"
+                d="M5 17H13M5 12H19M11 7H19"
+                stroke="#3cb4bd"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </g>
+          </g></svg
+        >
       </button>
     </div>
   </nav>
+  <!-- movil menu -->
+  <div class="fixed top-0 left-0 w-full h-dvh bg-white z-50 nav-mov-menu flex flex-col hidden">
+    <div class="flex justify-between px-5 pr-10 py-10">
+      <div class="flex items-center gap-2 justify-center">
+        <Logo size={30} />
+        <h1 class="text-3xl font-bold nav-logo text-neutral-700">
+          Intelliship
+        </h1>
+      </div>
+      <button class="text-2xl transition duration-300 mov-menu-close">
+        <svg
+          width="30"
+          height="30"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+            <g id="Menu / Close_1">
+              <path
+                id="Vector"
+                d="M6 18L18 6M6 6L18 18"
+                stroke="#3cb4bd"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </g>
+          </g></svg
+        >
+      </button>
+    </div>
+
+    <ul class="flex flex-col px-10 gap-5 mt-5 w-full">
+      {
+        links.map((link) => (
+          <li class="link ">
+            <a
+              href={link.href}
+              class="text-2xl transition duration-300 flex items-center gap-2 justify-between"
+            >
+              {link.name}
+              <ArrowDown
+                width="30"
+                height="30"
+                stroke="#3cb4bd"
+                class="inline-block"
+              />
+            </a>
+          </li>
+        ))
+      }
+      <li class="flex items-center gap-5 w-full">
+        <a
+          href="https://sacalogistics.managercargo.com/public/indexlogin/logincasillero"
+          target="_blank"
+          class="text-2xl text-neutral-700 transition duration-300 w-full flex items-center gap-2 justify-between"
+        >
+          Iniciar sesión
+          <ArrowDown
+            width="30"
+            height="30"
+            stroke="#3cb4bd"
+            class="inline-block"
+          />
+        </a>
+      </li>
+      <li class="flex items-center gap-5">
+        <a
+          target="_blank"
+          href="https://sacalogistics.managercargo.com/public/web/webindex/registrocas/form/1?ag=1"
+          class="text-xl bg-[#3cb4bd] mt-10 font-medium w-full text-white flex items-center justify-between gap-2 px-4 py-3 rounded-lg transition duration-300 hover:bg-[#46d9e3]/80"
+        >
+          Regístrate
+          <ArrowDown width="30" height="30" />
+        </a>
+      </li>
+    </ul>
+  </div>
 </header>
 
 <script>
@@ -90,5 +198,45 @@ const { text = "dark" } = Astro.props;
       end: "bottom top",
       toggleActions: "play none none reverse",
     },
+  });
+
+  const movMenu = document.querySelector(".mov-menu-open") as HTMLButtonElement;
+  const movMenuClose = document.querySelector(
+    ".mov-menu-close"
+  ) as HTMLButtonElement;
+  const navMovMenu = document.querySelector(".nav-mov-menu") as HTMLDivElement;
+
+  movMenu.addEventListener("click", () => {
+    navMovMenu.classList.toggle("hidden");
+    gsap.fromTo(
+      navMovMenu,
+      { opacity: 0, y: -100 },
+      { opacity: 1, y: 0, duration: 0.5 }
+    );
+  });
+  movMenuClose.addEventListener("click", () => {
+    gsap.to(navMovMenu, {
+      opacity: 0,
+      y: -100,
+      duration: 0.5,
+      onComplete: () => {
+        navMovMenu.classList.toggle("hidden");
+        
+      },
+    });
+  });
+
+  const navLinks = document.querySelectorAll(".nav-mov-menu a");
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      gsap.to(navMovMenu, {
+        opacity: 0,
+        y: -100,
+        duration: 0.5,
+        onComplete: () => {
+          navMovMenu.classList.toggle("hidden");
+        },
+      });
+    });
   });
 </script>
