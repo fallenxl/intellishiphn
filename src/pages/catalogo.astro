@@ -209,27 +209,7 @@ const plansInfo = [
 
   const plansCards = gsap.utils.toArray(".plan-card");
   const plansContainer = document.querySelector(".plans-container");
-  const plansHeader = document.querySelector(".plans-header");
-
   const tl = gsap.timeline({});
-
-  tl.fromTo(
-    plansHeader,
-    { opacity: 0, y: 100 },
-    {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: plansContainer,
-        start: "top 80%",
-        end: "bottom top",
-        scrub: true,
-        once: true,
-      },
-    }
-  );
 
   tl.fromTo(
     plansCards,
