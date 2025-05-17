@@ -177,12 +177,15 @@ export function Calculator() {
     <div className="md:px-4 py-0 flex flex-col md:flex-row items-start md:w-2/3">
       <div className="w-full">
         <form onSubmit={handleSubmit} className="md:border border-neutral-200 rounded-xl md:p-10">
+          <h3 className="text-2xl font-bold text-neutral-700 pb-4">
+            Calculadora de Carga
+          </h3>
           <div>
-            <h4 className="text-lg font-bold text-neutral-700">
+            <h4 className=" font-bold text-neutral-700">
               <BiMapAlt className="inline-block mr-2 text-principal" />
               Origen de la carga
             </h4>
-            <div className="flex gap-4 mt-2">
+            <div className="flex gap-4 mt-2 text-sm">
               {["miami", "china"].map((loc) => (
                 <RadioButton
                   key={loc}
@@ -198,11 +201,11 @@ export function Calculator() {
             </div>
 
             <div className="mt-4">
-              <h4 className="text-lg font-bold text-neutral-700">
+              <h4 className=" font-bold text-neutral-700">
                 <BiMapAlt className="inline-block mr-2 text-principal" />
                 Destino
               </h4>
-              <h5 className="text-neutral-500">Honduras</h5>
+              <h5 className="text-neutral-500 font-bold mt-2 ml-6">Honduras</h5>
 
               {origin === "china" && (
                 <ChinaForm

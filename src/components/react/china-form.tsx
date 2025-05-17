@@ -22,7 +22,7 @@ export function ChinaForm({
     <>
       <div className={`mt-4 ${className}`}>
         <div className={`mt-4`}>
-          <h4 className="text-lg font-bold text-neutral-700">
+          <h4 className=" font-bold text-neutral-700">
              <BiCategory className="inline-block text-principal mr-2" />
             Tipo de producto
           </h4>
@@ -45,7 +45,7 @@ export function ChinaForm({
           </div>
         </div>
         <div className="mt-4">
-          <h4 className="text-lg font-bold text-neutral-700">
+          <h4 className=" font-bold text-neutral-700">
             <FaWeightHanging className="inline-block mr-2 text-principal"/>
             Peso</h4>
           <div className="flex flex-col-reverse md:flex-row gap-2 mt-2">
@@ -80,7 +80,7 @@ export function ChinaForm({
           </div>
         </div>
         <div className="mt-4">
-          <h4 className="text-lg font-bold text-neutral-700">
+          <h4 className=" font-bold text-neutral-700">
             <TbDimensions className="inline-block mr-2 text-principal"/>
             Dimensiones</h4>
           <Checkbox
@@ -122,7 +122,7 @@ export function ChinaForm({
 
             {!isSetVolumeChecked && (
               <div className="flex items-start gap-2 text-neutral-700 font-medium">
-                <div className="flex flex-col gap-2 w-full ">
+                <div className="flex flex-col  w-full ">
                   <label htmlFor="width">Ancho</label>
                   <input
                     type="number"
@@ -141,7 +141,7 @@ export function ChinaForm({
                     className="border-2 border-neutral-200 rounded-xl px-4 py-2 w-full outline-none"
                   />
                 </div>
-                <div className="flex flex-col gap-2 w-full">
+                <div className="flex flex-col  w-full">
                   <label htmlFor="height">Alto</label>
                   <input
                     type="number"
@@ -161,7 +161,7 @@ export function ChinaForm({
                     className="border-2 border-neutral-200 rounded-xl px-4 py-2 w-full outline-none"
                   />
                 </div>
-                <div className="flex flex-col gap-2 w-full">
+                <div className="flex flex-col w-full">
                   <label htmlFor="length">Largo</label>
                   <input
                     type="number"
@@ -223,7 +223,7 @@ export function ChinaForm({
           )}
         </div>
         <div className="mt-4">
-          <h4 className="text-lg font-bold text-neutral-700">
+          <h4 className=" font-bold text-neutral-700">
             <BsBoxes className="inline-block mr-2 text-principal"/>
             Cantidad</h4>
           <input

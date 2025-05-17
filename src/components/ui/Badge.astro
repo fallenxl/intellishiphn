@@ -21,11 +21,12 @@ const { title, class:className } = Astro.props;
         ease: "power3.out",
         scrollTrigger: {
           trigger: badge,
-          start: "top bottom",
-          end: "top top",
+          start: "top 80%",
+          end: "top 20%",
           scrub: true,
           once: true,
         },
       });
     });
+    ScrollTrigger.refresh();
 </script>

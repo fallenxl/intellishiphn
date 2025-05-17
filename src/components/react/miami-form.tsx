@@ -6,14 +6,14 @@ export function MiamiForm() {
   return (
     <div className="miami-form">
       <div className="mt-4">
-        <h4 className="text-lg font-bold text-neutral-700">
+        <h4 className=" font-bold text-neutral-700">
             <BiCategory className="inline-block text-principal mr-2" />
             Servicio</h4>
         <div className="flex w-full gap-2 mt-2">
             <RadioButton
               id="standard"
               name="service"
-              className=" px-4 py-2 flex-grow"
+              className=" px-4 py-2 flex-grow text-sm"
               value="standard"
               label="Aéreo Standard"
               defaultChecked
@@ -23,20 +23,20 @@ export function MiamiForm() {
               name="service"
               value="express"
               label="Aéreo Express"
-              className="px-4 py-2 flex-grow"
+              className="px-4 py-2 flex-grow text-sm"
             />
             <RadioButton
               id="maritime"
               name="service"
               value="maritime"
               label="Marítimo"
-              className="px-4 py-2 "
+              className="px-4 py-2 text-sm"
             />
          
         </div>
       </div>
       <div className="mt-4">
-        <h4 className="text-lg font-bold text-neutral-700">
+        <h4 className=" font-bold text-neutral-700">
             <FaWeightHanging className="inline-block mr-2 text-principal"/>
             Peso</h4>
         <div className="flex  gap-2 mt-2">

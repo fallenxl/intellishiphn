@@ -3,8 +3,8 @@ import ArrowDown from "../icons/ArrowDown.astro";
 import Logo from "../icons/Logo.astro";
 
 const links = [
-  { name: "Servicios", href: "#services" },
-  { name: "Precios", href: "#prices" },
+  { name: "Servicios", href: "/#services" },
+  { name: "Precios", href: "/#prices" },
   { name: "Cotizador", href: "/cotizador" },
 ];
 const { text = "dark" } = Astro.props;
@@ -37,11 +37,12 @@ const { text = "dark" } = Astro.props;
       <div>
         <ul class="hidden md:flex items-center gap-5">
           <li class="hidden md:flex items-center gap-5">
-            <a href="#contact"> Iniciar sesión </a>
+            <a href="https://sacalogistics.managercargo.com/public/indexlogin/logincasillero" target="_blank"> Iniciar sesión </a>
           </li>
           <li class="hidden md:flex items-center gap-5">
             <a
-              href="#contact"
+              target="_blank"
+              href="https://sacalogistics.managercargo.com/public/web/webindex/registrocas/form/1?ag=1"
               class="bg-[#3cb4bd] text-white flex items-center gap-2 px-4 py-2 rounded-lg transition duration-300 hover:bg-[#46d9e3]/80"
             >
               Regístrate
