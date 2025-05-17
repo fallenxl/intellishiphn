@@ -2,7 +2,7 @@
 import Badge from "../components/ui/Badge.astro";
 import ArrowDown from "../icons/ArrowDown.astro";
 import LayoutSimple from "../layouts/LayoutSimple.astro";
-
+import catalogPDF from "../assets/catalogo-intelliship.pdf";
 const plansInfo = [
   {
     title: "Aéreo Standard",
@@ -65,6 +65,20 @@ const plansInfo = [
           Miami a Honduras.
         </p>
       </div>
+      <!-- descarga nuetro catalogo -->
+        <div class="flex flex-col items-center justify-center w-full pb-10 px-8 md:px-0 max-w-screen-xl mx-auto">
+            <a
+            href={catalogPDF}
+            target="_blank"
+            class="bg-[#44ccd6] text-white flex items-center gap-2 px-4 py-2 rounded-lg transition duration-300 hover:bg-[#46d9e3]/80"
+            >
+            Descargar catálogo
+            <ArrowDown />
+            </a>
+            <p class="mt-2 text-sm text-neutral-500">
+            *Catalogo en formato PDF
+            </p>
+        </div>
       <div
         class="w-full max-w-screen-xl mx-auto flex flex-col md:flex-row justify-center pt-10 md:pt-24 gap-16 px-8 md:px-10"
       >
