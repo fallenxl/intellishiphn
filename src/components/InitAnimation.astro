@@ -11,9 +11,59 @@ let logoColor = "#00ccd3";
   </div>
 </div>
 <script>
-  import { playAnimation } from "../assets/scripts/animation.js";
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import { SplitText } from "gsap/SplitText";
+  gsap.registerPlugin(ScrollTrigger, SplitText);
 
-  window.addEventListener("load", () => {
-    playAnimation();
+  let initPageRef = document.querySelector(".animation-container") as HTMLElement;
+  let bgTransitionRef = document.querySelector(".bg-transition") as HTMLElement;
+  let logoBars = gsap.utils.toArray(".logo-bar") as HTMLElement[];
+
+
+  const tl = gsap.timeline({});
+
+  logoBars.forEach((bar, index) => {
+    tl.set(bar, { fill: "#00ccd3" });
   });
+
+
+
+  if (initPageRef) {
+    tl.to(initPageRef, {
+      duration: 1,
+      ease: "power3.out",
+      delay: 0.5,
+    })
+
+      .to(bgTransitionRef, {
+        duration: 1,
+        transformOrigin: "bottom center",
+        scaleY: 1,
+        backgroundColor: "#00ccd3",
+        ease: "power3.out",
+      })
+      .to(
+        logoBars,
+        {
+          fill: "white",
+          duration: 0.2,
+        },
+        "<"
+      )
+      .to(initPageRef, {
+        duration: 1,
+        opacity: 0,
+        ease: "power3.out",
+        onComplete: () => {
+          if (initPageRef) {
+            initPageRef.style.display = "none";
+          }
+        },
+      });
+
+    tl.set(logoBars, { fill: "#46d9e3" }, "<");
+
+  }
+  
 </script>
