@@ -1,0 +1,240 @@
+---
+import Badge from "../components/ui/Badge.astro";
+import ArrowDown from "../icons/ArrowDown.astro";
+import LayoutSimple from "../layouts/LayoutSimple.astro";
+
+const plansInfo = [
+  {
+    title: "Aéreo Standard",
+    description: "Ideal para envíos regulares sin cobros ocultos.",
+    price: 4.85,
+    features: [
+      "Entregas en 9-12 días",
+      "Salidas miércoles y viernes",
+      "Consolidación gratis",
+      "Sin mínimo por libra",
+      "Horario en Miami: Lun-Vier",
+    ],
+    securePrice: 0.8,
+  },
+  {
+    title: "Aéreo Express",
+    description: "Para envíos urgentes que no pueden esperar.",
+    price: 9.99,
+    features: [
+      "Entregas en 3-6 días",
+      "Salida los sábados",
+      "Consolidación gratis",
+      "Sin mínimo por libra",
+      "Recepción Miami: Lun-Vier",
+    ],
+    securePrice: 0.8,
+  },
+  {
+    title: "Marítimo",
+    description: "Ideal para cargas grandes o sobre-dimensionadas.",
+    price: 2.5,
+    features: [
+      "Entregas en 20-25 días",
+      "Salidas los lunes",
+      "Cobro por peso real",
+      "Consolidación gratis",
+      "Horario en Miami: Lun-Vier ",
+    ],
+    securePrice: 0.8,
+  },
+];
+---
+
+<LayoutSimple>
+  <section id="prices">
+    <div
+      class="plans-container flex flex-col items-start justify-start mx-auto pt-28 pb-5 md:px-0"
+    >
+      <div
+        class="plans-header flex flex-col items-center justify-center w-full pb-10 px-8 md:px-0 max-w-screen-xl mx-auto"
+      >
+        <Badge title="Servicios de Envío" />
+        <h3
+          class="text-3xl md:text-5xl font-bold text-neutral-600 mt-6 text-center"
+        >
+          Tarifas claras, sin sorpresas.
+        </h3>
+        <p class="mt-6 text-lg text-neutral-500 md:max-w-[50ch] text-center">
+          Escoge el plan que mejor se adapte a tus necesidades de envío desde
+          Miami a Honduras.
+        </p>
+      </div>
+      <div
+        class="w-full max-w-screen-xl mx-auto flex flex-col md:flex-row justify-center pt-10 md:pt-24 gap-16 px-8 md:px-10"
+      >
+        {
+          plansInfo.map((plan) => (
+            <div class="plan-card bg-white shadow-sm py-10 px-10 flex flex-col w-full md:even:scale-110 z-10">
+              <p class="text-5xl font-bold text-neutral-600">
+                ${plan.price.toFixed(2)}
+                <span class="text-sm font-normal text-neutral-500">
+                  {" "}
+                  / libra
+                </span>
+              </p>
+              <p class="text-sm text-neutral-400 font-light mt-2">
+                + Seguro ${plan.securePrice.toFixed(2)} por carga retirada.
+              </p>
+              <h3 class="text-xl font-medium py-1 mt-6 text-neutral-700">
+                {plan.title}
+              </h3>
+              <p class="text-sm text-neutral-500">{plan.description}</p>
+              <hr class="my-6 border-neutral-300" />
+              <ul class="mt-4 space-y-2">
+                {plan.features.map((feature) => (
+                  <li class="text-neutral-600 text-balance">
+                    <svg
+                      class="inline-block text-[#01bac0] mr-2"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="#44ccd6"
+                        stroke-width="1.5"
+                      />
+                      <path
+                        d="M8.5 12.5L10.5 14.5L15.5 9.5"
+                        stroke="#44ccd6"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+
+              <a
+                href="https://sacalogistics.managercargo.com/public/web/webindex/registrocas/form/1?ag=1"
+                target="_blank"
+                class="flex gap-2 hover:scale-95 transition duration-300 bg-[#44ccd6] text-white items-center justify-center px-4 p-2 mt-10 cursor-pointer z-20 rounded-full"
+              >
+                <span>Registrar mi casillero</span>
+                <ArrowDown />
+              </a>
+              <a
+                href="/terminos-y-condiciones"
+                class="text-xs text-neutral-500 mt-4 hover:text-[#44ccd6] transition duration-300 text-center"
+              >
+                Términos y condiciones
+              </a>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+  <section id="terms" class="mt-4">
+    <div class="max-w-screen-xl mx-auto px-8 md:px-0 py-20">
+      <h4 class="text-2xl font-semibold text-neutral-700 mb-6">
+        Términos y Condiciones de Envío
+      </h4>
+      <ul class="space-y-4 text-neutral-600 leading-relaxed">
+        <li>
+          🔸 <strong>Redondeo de peso:</strong> Todos los paquetes se redondean hacia
+          arriba. Ejemplo: 1.1lb se factura como 2lb.
+        </li>
+        <li>
+          🔸 <strong>Cobro por volumen (solo China):</strong> Carga marítima se cobra
+          por m³. Electrónica: $480/m³, carga general: $380/m³. Mínimo: $80.
+        </li>
+        <li>
+          🔸 <strong>Seguro:</strong> $0.80 por carga total (no por paquete). Cobertura
+          hasta $500.
+        </li>
+        <li>
+          🔸 <strong>Recepción en Miami:</strong> Lunes a viernes de 9:00AM a 5:00PM.
+        </li>
+        <li>
+          🔸 <strong>Rotulación:</strong> Todos los paquetes deben llevar “Intelliship”
+          antes del nombre. De lo contrario se cobra $2 por paquete mal rotulado.
+        </li>
+        <li>
+          🔸 <strong>Almacenaje:</strong> 60 días gratis. Después se considera abandono.
+        </li>
+        <li>
+          🔸 <strong>Artículos sobre-dimensionados:</strong> Bumpers de vehiculo,
+          muebles, entre otros; serán cobrados por pie cubico y NO por libra.
+          <small> ($13/ft3 + $25 de IN & OUT del cubicaje total)</small>
+        </li>
+        <li>
+            🔸
+            <strong>Escala de precios marítimo:</strong><br />
+            <ul class="ml-6">
+                <li>0-14 lbs: $3.40/libra</li>
+                <li>15-29 lbs: $2.85/libra</li>
+                <li>+30 lbs: $2.50/libra</li>
+            </ul>
+        </li>
+      </ul>
+      <a
+        href="/terminos-y-condiciones"
+        class="inline-block mt-6 text-[#44ccd6] hover:underline text-sm font-medium"
+      >
+        Leer términos completos →
+      </a>
+    </div>
+  </section>
+</LayoutSimple>
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  const plansCards = gsap.utils.toArray(".plan-card");
+  const plansContainer = document.querySelector(".plans-container");
+  const plansHeader = document.querySelector(".plans-header");
+
+  const tl = gsap.timeline({});
+
+  tl.fromTo(
+    plansHeader,
+    { opacity: 0, y: 100 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: plansContainer,
+        start: "top 80%",
+        end: "bottom top",
+        scrub: true,
+        once: true,
+      },
+    }
+  );
+
+  tl.fromTo(
+    plansCards,
+    { opacity: 0, y: 150 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      stagger: 0.2,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: plansContainer,
+        start: "top top+=800",
+        end: "bottom top",
+        scrub: true,
+        once: true,
+      },
+    }
+  );
+
+  ScrollTrigger.refresh();
+</script>

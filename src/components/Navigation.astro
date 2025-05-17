@@ -8,7 +8,9 @@ import Whatsapp from "../icons/Whatsapp.astro";
 const links = [
   { name: "Servicios", href: "/#services" },
   { name: "Precios", href: "/#prices" },
+  {name: "Catalogo", href: "/catalogo" },
   { name: "Cotizador", href: "/cotizador" },
+
 ];
 const { text = "dark" } = Astro.props;
 ---
@@ -183,8 +185,7 @@ const { text = "dark" } = Astro.props;
     boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
     duration: 0.2,
     scrollTrigger: {
-      trigger: navContainer,
-      start: "top top", // activarse al hacer un poco de scroll
+      start: "top -10", // activarse al hacer un poco de scroll
       toggleActions: "play none none reverse", // cuando entra y sale del punto
       // "play" al entrar, "reverse" al salir
     },
@@ -193,8 +194,7 @@ const { text = "dark" } = Astro.props;
     color: "#444444",
     duration: 0.2,
     scrollTrigger: {
-      trigger: navContainer,
-      start: "top top",
+      start: "top -10", // activarse al hacer un poco de scroll
       end: "bottom top",
       toggleActions: "play none none reverse",
     },

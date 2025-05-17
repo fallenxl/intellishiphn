@@ -22,9 +22,9 @@ export function playAnimation() {
 
   if (initPageRef) {
     tl.to(initPageRef, {
-      duration: 1.5,
+      duration: 1,
       ease: "power3.out",
-      delay: 1,
+      delay: 0.5,
 
     })
      

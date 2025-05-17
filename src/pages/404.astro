@@ -1,0 +1,28 @@
+---
+import LayoutSimple from "../layouts/LayoutSimple.astro";
+import ArrowDown from "../icons/ArrowDown.astro";
+---
+
+<LayoutSimple>
+  <section
+    class="min-h-screen flex flex-col justify-center items-center text-center px-6  py-28"
+  >
+    <div class="max-w-xl">
+      <h1 class="text-7xl font-bold text-[#44ccd6]">404</h1>
+      <h2 class="text-2xl md:text-3xl font-semibold text-neutral-700 mt-4">
+        Página no encontrada
+      </h2>
+      <p class="mt-4 text-neutral-500 text-sm md:text-base">
+        Lo sentimos, la página que buscas no existe o ha sido movida.
+      </p>
+
+      <a
+        href="/"
+        class="inline-block items-center gap-2 bg-[#44ccd6] text-white px-6 py-2 rounded-full mt-8 hover:scale-95 transition duration-300"
+      >
+        Volver al inicio
+        <ArrowDown class="rotate-[-90deg] inline-block" />
+      </a>
+    </div>
+  </section>
+</LayoutSimple>
