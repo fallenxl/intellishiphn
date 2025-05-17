@@ -39,13 +39,6 @@ import WhyUs2 from "../components/WhyUs2.astro";
         </p>
         <WhyUs2 />
       </div>
-      
-      <Image
-        id={"forklift"}
-        src={forklift}
-        alt="Forklift"
-        class="relative -left-[120px] md:left-[0] w-[140px] mb-auto mt-10"
-      />
     </div>
     <Calculator client:load />
     <div class="flex-grow md:hidden">
@@ -76,27 +69,3 @@ import WhyUs2 from "../components/WhyUs2.astro";
   </div>
 </LayoutCalculator>
 
-<script>
-  import gsap from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  // Esperar a que el DOM esté cargado
-  window.addEventListener("DOMContentLoaded", () => {
-    const forklift = document.getElementById("forklift");
-    if (!forklift) return;
-
-    gsap.to(forklift, { // duración de la animación
-      scrollTrigger: {
-        trigger: forklift,
-        start: "top 70%", // cuando el forklift entra al 80% del viewport
-        end: "top 20%", // cuando llega al 20% del viewport
-        scrub: true, // suavidad de la animación con el scroll
-        // markers: true, // útil para debug
-      },
-      x: 450, // cuánto se moverá en eje X
-      ease: "power2.out",
-    });
-  });
-</script>
