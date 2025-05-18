@@ -44,7 +44,6 @@ export function MiamiForm() {
             type="number"
             name="weight"
             id="weight"
-            
             min={0}
             step={0.01}
             placeholder="Ej. 12.5"

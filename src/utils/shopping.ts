@@ -16,11 +16,8 @@ export function calculateMiamiPrice(serviceName: string, weightLb: number, weigh
     weightLb = weightLb * 2.20462;
   }
 
-
-  // round to next number ej. 1.4 => 2
-  weightLb = Math.ceil(weightLb);
-  console.log('Weight:', weightLb);
-  
+  const weight = weightLb;
+  weightLb = Math.ceil(weightLb );
   if ('pricePerLb' in service) {
     pricePerLb = service.pricePerLb ?? 0;
   } else if ('variants' in service) {
@@ -41,6 +38,8 @@ export function calculateMiamiPrice(serviceName: string, weightLb: number, weigh
     subtotal: parseFloat((weightLb * pricePerLb).toFixed(2)),
     type: serviceName,
     fee: service.fee,
+    weight: parseFloat(weight.toFixed(2)),
+    weightUnit
   }
 }
 

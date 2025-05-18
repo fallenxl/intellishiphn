@@ -33,6 +33,8 @@ export function Calculator() {
     subtotal: 0,
     type: null,
     fee: 0,
+    weight: 0,
+    weightUnit: "lb",
   });
 
   // ✅ Recalcular volumen automáticamente cuando cambian medidas
@@ -66,6 +68,8 @@ export function Calculator() {
       subtotal: 0,
       type: null,
       fee: 0,
+      weight: 0,
+      weightUnit: "lb",
     });
     setChinaPrice({
       total: 0,
@@ -157,11 +161,15 @@ export function Calculator() {
             {miamiPrice.type === "express" ? "Aéreo Express" : "Aéreo Standard"}
           </span>
           <div className="flex justify-between w-full">
-            <span className="font-medium">Costo de manejo</span>
+            <span className="font-medium">Ajuste de peso</span>
+            <span>{miamiPrice.weight} {"->"} {Math.ceil(miamiPrice.weight)} libras</span>
+          </div>
+          <div className="flex justify-between w-full">
+            <span className="font-medium">Seguro</span>
             <span>{formatCurrency(miamiPrice.fee)}</span>
           </div>
           <div className="flex justify-between w-full">
-            <span className="font-medium">Costo de carga</span>
+            <span className="font-medium">Costo de flete</span>
             <span>{formatCurrency(miamiPrice.subtotal)}</span>
           </div>
           <div className="flex justify-between w-full text-xl font-bold">
