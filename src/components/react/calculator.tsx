@@ -161,7 +161,7 @@ export function Calculator() {
             {miamiPrice.type === "express" ? "Aéreo Express" : "Aéreo Standard"}
           </span>
           <div className="flex justify-between w-full">
-            <span className="font-medium">Ajuste de peso</span>
+            <span className="font-medium">Peso a cobrar</span>
             <span>{miamiPrice.weight} {"->"} {Math.ceil(miamiPrice.weight)} libras</span>
           </div>
           <div className="flex justify-between w-full">
