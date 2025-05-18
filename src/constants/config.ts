@@ -4,16 +4,16 @@ export const CONFIG = {
     {
       name: "standard",
       pricePerLb: 4.85,
-      fee: 0.20,
+      fee: 0.80,
     },
     {
       name: "express",
       pricePerLb: 9.99,
-      fee: 0.20,
+      fee: 0.80,
     },
     {
       name: "maritime",
-      fee: 0.20,
+      fee: 0.80,
       variants: [
         { max: 14, price: 3.40 },
         { max: 29, price: 2.85 },
