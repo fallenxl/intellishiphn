@@ -2,7 +2,6 @@
 import Mouse from "../icons/Mouse.astro";
 import ArrowDown from "../icons/ArrowDown.astro";
 import heroVideo from "../assets/hero-video.mp4";
-import heroVideoMini from "../assets/hero-video-mini.webp";
 ---
 
 <div
@@ -56,9 +55,8 @@ import heroVideoMini from "../assets/hero-video-mini.webp";
       muted
       playsinline
       class="absolute top-0 left-0 w-screen h-screen object-cover opacity-80"
-      poster={heroVideoMini.src}
       >
-      <source src={heroVideo} type="video/mp4" />
+      <source src={"/videos/hero-video.mp4"} type="video/mp4"  />
       Your browser does not support the video tag.
     </video>
     <div class="absolute inset-0 bg-black/70"></div>
