@@ -8,249 +8,133 @@ import Layout from "../layouts/LayoutSimple.astro";
       Términos y Condiciones de Intelliship
     </h1>
 
-    <section class="mb-10">
+    <!-- Índice -->
+    <nav class="mb-12 p-4 bg-neutral-100 rounded-lg">
+      <h2 class="text-xl font-semibold mb-4">Índice</h2>
+      <ol class="list-decimal pl-6 space-y-2">
+        <li><a href="#seguro" class="text-blue-600 hover:underline">Seguro de Carga</a></li>
+        <li><a href="#exclusiones" class="text-blue-600 hover:underline">Exclusiones del Seguro</a></li>
+        <li><a href="#cobertura" class="text-blue-600 hover:underline">Cobertura del Seguro</a></li>
+        <li><a href="#declaraciones" class="text-blue-600 hover:underline">Declaraciones del Cliente</a></li>
+        <li><a href="#responsabilidad" class="text-blue-600 hover:underline">Responsabilidad de Intelliship</a></li>
+        <li><a href="#envios" class="text-blue-600 hover:underline">Envíos Marítimos y Aéreos</a></li>
+        <li><a href="#usps" class="text-blue-600 hover:underline">Envíos con USPS</a></li>
+        <li><a href="#tiempos" class="text-blue-600 hover:underline">Tiempos de Entrega</a></li>
+        <li><a href="#prohibiciones" class="text-blue-600 hover:underline">Prohibiciones</a></li>
+        <li><a href="#reclamos" class="text-blue-600 hover:underline">Reclamos</a></li>
+        <li><a href="#florida" class="text-blue-600 hover:underline">Dirección en Florida</a></li>
+        <li><a href="#almacenaje" class="text-blue-600 hover:underline">Almacenaje</a></li>
+        <li><a href="#restriccion" class="text-blue-600 hover:underline">Restricción de Retiro Parcial de Carga</a></li>
+        <li><a href="#aceptacion" class="text-blue-600 hover:underline">Aceptación de Términos</a></li>
+      </ol>
+    </nav>
+
+    <!-- Contenido -->
+    <section id="seguro" class="mb-10">
       <h2 class="text-2xl font-semibold mb-4">Seguro de Carga</h2>
-      <p>
-        El seguro tiene un costo fijo de <strong>$0.80 USD</strong> o <strong
-          >L.20.00</strong
-        > por carga completa. Este cargo NO se aplicará por paquete, sino por carga
-        total. Por lo tanto, si su envío incluye múltiples paquetes, el costo de
-        $0.80 se añadirá a la factura total.
-      </p>
+      <p>El seguro es un cobro fijo que será añadido al monto total de su pedido. Se aplicará un costo de <strong>$0.80 USD</strong> o <strong>L.20.00</strong> por carga completa. Este cargo NO se aplicará por paquete, sino por carga total. Por lo tanto, si su envío incluye múltiples paquetes, el costo de $0.80 se añadirá a la factura total.</p>
     </section>
 
-    <section class="mb-10">
+    <section id="exclusiones" class="mb-10">
       <h3 class="text-xl font-semibold mb-2">Exclusiones del Seguro</h3>
-      <p>
-        El seguro de carga establecido en la tarifa no cubre los siguientes
-        artículos:
-      </p>
       <ul class="list-disc pl-6">
-        <li>Líquidos (cremas, perfumes, shampoo, aceites, etc.)</li>
+        <li>Líquidos (cremas, perfumes, shampoo, aceites, jabones, etc.)</li>
         <li>Maquillaje</li>
         <li>Espejos o vidrios</li>
-        <li>Artículos usados o mal embalados</li>
+        <li>Artículos usados</li>
+        <li>Artículos mal embalados</li>
         <li>Televisores o monitores</li>
       </ul>
     </section>
 
-    <section class="mb-10">
-      <h3 class="text-xl font-semibold mb-2">Cobertura</h3>
-      <p>
-        Cubre hasta <strong>$500 USD</strong> por pérdida o daño desde USA a Honduras.
-        Para montos mayores, se aplica un 3% del valor asegurado. El seguro adicional
-        debe solicitarse con un agente de servicio al cliente.
-      </p>
-      <ul class="list-disc pl-6 mt-2">
-        <li>
-          El seguro no cubre artículos mal embalados. Es responsabilidad del
-          cliente o vendedor garantizar un embalaje adecuado para su traslado.
-        </li>
-        <li>
-          El seguro cubre únicamente paquetes recibidos y confirmados por
-          Intelliship en la bodega de Miami. No nos hacemos responsables por
-          paquetes no recibidos por nosotros.
-        </li>
-        <li>
-          El seguro no cubre productos faltantes en su pedido si este viene
-          sellado, ya que esto es un error del vendedor y no de Intelliship.
-        </li>
-        <li>
-          Para hacer uso del seguro, el reclamo debe realizarse a Intelliship
-          inmediatamente al recibir su pedido, tanto en Tegucigalpa (TGU) como
-          fuera de ella. De lo contrario, el seguro no procederá.
-        </li>
-        <li>
-          Si usted cuenta con artículos frágiles como televisores o monitores,
-          puede asegurarlos directamente con un agente de servicio al cliente.
-        </li>
-      </ul>
-    </section>
-
-    <section class="mb-10">
-      <h2 class="text-2xl font-semibold mb-4">Declaraciones del Cliente</h2>
-      <p>
-        Intelliship no acepta envíos cuyos contenidos sean: drogas, dinero,
-        armas de fuego o de entrenamiento (gas o balines), explosivos, y ningún
-        artículo prohibido por la ley. El remitente declara que no está enviando
-        ninguno de los artículos descritos anteriormente.
-      </p>
-      <ul class="list-disc pl-6 mt-2">
-        <li>
-          A pesar de lo anterior Intelliship podrá recibir con o sin
-          conocimiento previo cualquiera de los artículos descritos
-          anteriormente, sin asumir ninguna responsabilidad, por pérdida,
-          deterioro u otro defecto que pueda resultar como consecuencia de su
-          transportación o manejo.
-        </li>
-        <li>
-          En todo caso Intelliship no será responsable de carga que se le
-          entregue cualquier clase de bienes, producto o artículos que estén
-          prohibidos por ley, asumiendo toda la responsabilidad el remitente
-          (cliente final).
-        </li>
-        <li>
-          Intelliship no se responsabiliza por los atrasos, extravíos, daños o
-          pérdidas que se incurran en la mercadería del cliente, cuando estas
-          son causadas por entes externos a la misma, por causas de fuerza mayor
-          o por negligencia del cliente.
-        </li>
-        <li>
-          Es responsabilidad del expedidor garantizar que el embalaje adecuado
-          se utiliza y que los contenidos estén correctamente embalados,
-          envueltos y acolchados con rotulación de «frágil» para el transporte
-          adecuado.
-        </li>
-        <li>
-          Es responsabilidad del cliente verificar que todo lo que envía cumple
-          con las políticas establecidas.
-        </li>
-        <li>
-          Es responsabilidad del cliente colocar la palabra «Intelliship» antes
-          de su nombre en todos sus paquetes. Si no lo hace, el paquete entrará
-          en el área de desconocidos de la bodega de Miami y el tiempo para
-          ubicarlo será indefinido, dependiendo de la disponibilidad de la
-          bodega.
-        </li>
-      </ul>
-    </section>
-
-    <section class="mb-10">
-      <h2 class="text-2xl font-semibold mb-4">
-        Responsabilidad de Intelliship
-      </h2>
+    <section id="cobertura" class="mb-10">
+      <h3 class="text-xl font-semibold mb-2">Cobertura del Seguro</h3>
       <ul class="list-disc pl-6">
-        <li>
-          Intelliship no asume responsabilidad por ningún envío que aparezca en
-          los servicios de rastreo del transportista (courier) como «envío
-          entregado» si esa empresa no presta servicio de confirmación en línea
-          y firma electrónica. El paquete será considerado como recibido cuando
-          efectivamente sea entregado y registrado en nuestro sistema de rastreo
-          en línea.
-        </li>
-        <li>
-          Intelliship recibe sus envíos asegurando que los empaques o envolturas
-          exteriores de sus envíos a simple vista no tengan daños visibles como
-          golpes, abolladuras, roturas y/o humedad. No somos responsables por la
-          fiabilidad, veracidad y/o integridad del contenido, ni la calidad del
-          empaque interior que asegure la integridad del mismo durante el
-          transporte. Dichos envíos se almacenan bajo todas las medidas de
-          seguridad necesarias hasta su transporte, por lo que Intelliship solo
-          es responsable de pérdidas o extravíos cuando las causas sean
-          imputables directamente a Intelliship.
-        </li>
-        <li>
-          Intelliship NO se hace responsable por paquetes entregados en Miami
-          fuera de horario laboral. Horario: Lunes-Viernes de 9:00AM – 5:00PM
-          (EST).
-        </li>
+        <li>El seguro cubre hasta <strong>$500 USD</strong> por pérdida o daños incurridos durante el traslado de USA a Honduras (HN). Para asegurar artículos de mayor valor, el costo será del 3% del valor total de la factura. Este seguro adicional debe ser solicitado directamente con un agente de servicio al cliente.</li>
+        <li>El seguro no cubre artículos mal embalados. Es responsabilidad del cliente o vendedor garantizar un embalaje adecuado para su traslado.</li>
+        <li>El seguro cubre únicamente paquetes recibidos y confirmados por Intelliship en la bodega de Miami. No nos hacemos responsables por paquetes no recibidos por nosotros.</li>
+        <li>El seguro no cubre productos faltantes en su pedido si este viene sellado, ya que esto es un error del vendedor y no de Intelliship.</li>
+        <li>Para hacer uso del seguro, el reclamo debe realizarse a Intelliship inmediatamente al recibir su pedido, tanto en Tegucigalpa (TGU) como fuera de ella. De lo contrario, el seguro no procederá.</li>
+        <li>Si usted cuenta con artículos frágiles como televisores o monitores, puede asegurarlos directamente con un agente de servicio al cliente.</li>
       </ul>
     </section>
 
-    <section class="mb-10">
+    <section id="declaraciones" class="mb-10">
+      <h2 class="text-2xl font-semibold mb-4">Declaraciones del Cliente</h2>
+      <ul class="list-disc pl-6">
+        <li>Declaro que no estoy enviando: drogas, dinero, armas de fuego o de entrenamiento (gas o balines), explosivos, y ningún artículo prohibido por la ley.</li>
+        <li>Es responsabilidad del expedidor garantizar que el embalaje adecuado se utiliza y que los contenidos estén correctamente embalados, envueltos y acolchados con rotulación de "frágil" para el transporte adecuado.</li>
+        <li>Es responsabilidad del cliente verificar que todo lo que envía cumple con las políticas establecidas.</li>
+        <li>Es responsabilidad del cliente colocar la palabra "Intelliship" antes de su nombre en todos sus paquetes. Si no lo hace, el paquete entrará en el área de desconocidos de la bodega de Miami y el tiempo para ubicarlo será indefinido.</li>
+      </ul>
+    </section>
+
+    <section id="responsabilidad" class="mb-10">
+      <h2 class="text-2xl font-semibold mb-4">Responsabilidad de Intelliship</h2>
+      <ul class="list-disc pl-6">
+        <li>Intelliship no asume responsabilidad por ningún envío que aparezca en los servicios de rastreo del transportista como "envío entregado" si esa empresa no presta servicio de confirmación en línea y firma electrónica. El paquete será considerado recibido cuando efectivamente sea entregado y registrado en nuestro sistema.</li>
+        <li>Intelliship recibe sus envíos asegurando que los empaques exteriores no tengan daños visibles. No somos responsables por la integridad del contenido ni la calidad del embalaje interior. Solo somos responsables de pérdidas o extravíos imputables directamente a Intelliship.</li>
+        <li>Intelliship NO se hace responsable por paquetes entregados en Miami fuera de horario laboral. Horario: Lunes-Viernes de 9:00AM – 5:00PM (EST).</li>
+      </ul>
+    </section>
+
+    <section id="envios" class="mb-10">
       <h2 class="text-2xl font-semibold mb-4">Envíos Marítimos y Aéreos</h2>
       <ul class="list-disc pl-6">
-        <li>Carga sobredimensionada se cobra por pie cúbico.</li>
-        <li>
-          Si el peso volumétrico supera 5 veces el peso real, se considerará
-          carga sobredimensionada.
-        </li>
-        <li>
-          Debe especificarse la modalidad: “Aéreo”, “Marítimo” o “Express”.
-        </li>
-        <li>
-          Si no se especifica la modalidad del servicio y se coloca solo “Intelliship” se enviará en servicio aéreo standard.
-        </li>
-        <li>
-          Los cambios de modalidad deben hacerse antes de que el paquete llegue
-          a la bodega.
-        </li>
-        
+        <li>En envíos marítimos, si la carga es sobredimensionada, se cobrará por pie cúbico y no por peso real.</li>
+        <li>En envíos aéreos, si el peso volumétrico supera 5 veces el peso real, se enviará vía marítima y seguirá las normas del servicio marítimo.</li>
+        <li>Es necesario colocar “Aéreo”, “Marítimo” o “Express” en el envío. Si no se especifica, se enviará vía aéreo standard.</li>
+        <li>Los cambios de modalidad solo podrán realizarse antes de que el paquete llegue a la bodega, haciendo la pre-alerta en la plataforma de Intelliship.</li>
       </ul>
     </section>
 
-    <section class="mb-10">
+    <section id="usps" class="mb-10">
       <h2 class="text-2xl font-semibold mb-4">Envíos con USPS</h2>
-      <p>
-        No nos hacemos responsables por ningún envío hecho por el correo
-        nacional postal (USPS) ya que no se requiere firma de entrega y sus
-        fechas de entrega no son reales. Nuestra empresa se hace responsable
-        únicamente de los paquetes que aparecen registrados en nuestro sistema.
-        En caso de no aparecer, el cliente deberá contactar a su vendedor.
-      </p>
+      <p>No nos hacemos responsables por envíos hechos por USPS ya que no se requiere firma de entrega y sus fechas no son reales. Solo respondemos por paquetes registrados en nuestro sistema. En caso de no aparecer, el cliente deberá contactar a su vendedor.</p>
     </section>
 
-    <section class="mb-10">
+    <section id="tiempos" class="mb-10">
       <h2 class="text-2xl font-semibold mb-4">Tiempos de Entrega</h2>
-      <p>
-        El tiempo de entrega es un estimado y no representa una promesa. Nos
-        comprometemos a hacer todo nuestro mejor esfuerzo para completar la
-        entrega a tiempo.
-      </p>
+      <p>El tiempo de entrega es estimado y no representa una promesa. Haremos todo lo posible para cumplir con la entrega a tiempo.</p>
     </section>
 
-    <section class="mb-10">
+    <section id="prohibiciones" class="mb-10">
       <h2 class="text-2xl font-semibold mb-4">Prohibiciones</h2>
-      <p>
-        Prohibido enviar corrosivos, armas de fuego, material pornográfico y
-        dinero.
-      </p>
+      <p>Prohibido enviar corrosivos, armas de fuego, material pornográfico y dinero.</p>
     </section>
 
-    <section class="mb-10">
+    <section id="reclamos" class="mb-10">
       <h2 class="text-2xl font-semibold mb-4">Reclamos</h2>
       <ul class="list-disc pl-6">
-        <li>Debe hacerse inmediatamente al recibir el paquete.</li>
-        <li>Si se recoge en oficina, el reclamo debe ser en el momento.</li>
-        <li>Si se entrega vía delivery, debe hacerse de inmediato.</li>
-        <li>
-          Si se entrega por Cargo Expreso, se tiene un máximo de 24h para
-          reclamar.
-        </li>
+        <li>El reclamo debe hacerse al recibir el paquete.</li>
+        <li>Si se recoge en oficina, debe reclamarse inmediatamente.</li>
+        <li>Si se entrega vía delivery, debe reclamarse inmediatamente.</li>
+        <li>Si se entrega vía Cargo Expreso, el reclamo debe hacerse en un máximo de 24 horas.</li>
       </ul>
     </section>
 
-    <section class="mb-10">
+    <section id="florida" class="mb-10">
       <h2 class="text-2xl font-semibold mb-4">Dirección en Florida</h2>
-      <p>
-        Intelliship pondrá a su disposición una dirección en el estado de
-        Florida, en la cual se asignará un número de casillero. Esta es una
-        dirección legal en EE. UU. y podrá ser utilizada por el suscriptor como
-        centro de recepción de sus compras en línea. El suscriptor deberá
-        cumplir con todas las leyes y reglamentos aplicables, tanto en Estados
-        Unidos como en el país de origen y/o destino.
-      </p>
-      <p>
-        La dirección física corresponde a nuestra bodega de almacenamiento y
-        debe ser utilizada única y exclusivamente para el envío y recepción de
-        paquetes o carga. El suscriptor es responsable de suministrar la
-        dirección correcta y su número de casillero a quien realiza los envíos.
-        Intelliship no se hace responsable por mercancías mal direccionadas o
-        con datos errados en general.
-      </p>
+      <ul class="list-disc pl-6">
+        <li>Intelliship pondrá a su disposición una dirección en Florida con número de casillero asignado, para recibir sus compras en línea cumpliendo leyes de EE.UU. y de su país.</li>
+        <li>La dirección corresponde a nuestra bodega y debe usarse solo para envío y recepción de paquetes. El cliente es responsable de dar la dirección y casillero correctos.</li>
+      </ul>
     </section>
 
-    <section class="mb-10">
+    <section id="almacenaje" class="mb-10">
       <h2 class="text-2xl font-semibold mb-4">Almacenaje</h2>
-      <p>
-        Intelliship almacenará paquetes en sus oficinas de Tegucigalpa y Miami
-        por un tiempo máximo de 60 días. Si el paquete no es retirado por el
-        cliente dentro de este plazo, se declarará como abandonado y se
-        desechará. Intelliship quedará libre de toda responsabilidad y cualquier
-        reclamo hecho por el cliente por no dar el seguimiento adecuado de su
-        carga.
-      </p>
+      <p>Intelliship almacenará paquetes en Tegucigalpa y Miami por un máximo de 60 días. Después se considerarán abandonados y serán desechados, quedando libres de toda responsabilidad.</p>
     </section>
 
-    <section>
-      <h2 class="text-2xl font-semibold mb-4">
-        Aceptación de Términos y Condiciones
-      </h2>
-      <p>
-        Al haber aperturado su casillero con nosotros, el cliente acepta
-        nuestros términos y condiciones, los cuales serán considerados como un
-        contrato entre Intelliship y el cliente.
-      </p>
+    <section id="restriccion" class="mb-10">
+      <h2 class="text-2xl font-semibold mb-4">Restricción de Retiro Parcial de Carga</h2>
+      <p>No se permite el retiro parcial de carga perteneciente a un mismo servicio (Standard, Marítimo o Express). La carga debe retirarse en su totalidad.</p>
     </section>
+
+    <section id="aceptacion">
+      <h2 class="text-2xl font-semibold mb-4">Aceptación de Términos</h2>
+      <p>Al abrir su casillero con nosotros, el cliente acepta estos términos y condiciones, que se considerarán un contrato entre Intelliship y el cliente.</p>
+    </section>
+
   </section>
 </Layout>
